@@ -1,4 +1,3 @@
-import numpy as np
 import cv2
 
 cap = cv2.VideoCapture(1)
@@ -13,7 +12,7 @@ while True:
     for (x,y, w, h) in faces:
         color_red = (0,0,255)
         color_blue = (255,0,0)
-        cv2.rectangle(frame, (x,y),(x + w, y + h), color_blue, 5)
+        #cv2.rectangle(frame, (x,y),(x + w, y + h), color_blue, 5)
         roi_gray_scale = gray_scale[y:y+w, x:x+w]
         roi_color = frame[y:y+h, x:x+w]
         eyes = eye_cascade.detectMultiScale(roi_gray_scale, 1.3, 5)
